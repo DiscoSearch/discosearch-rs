@@ -17,7 +17,7 @@ impl DiscoClient {
         Self { client: Client::new(), base_url: String::from(base_url) }
     }
 
-    pub async fn create_index(&self, name: &str, dim: u8) -> Result<(), String> {
+    pub async fn create_index(&self, name: &str, dim: u32) -> Result<(), String> {
         let req = Request::builder()
             .method(Method::POST)
             .uri(format!("{}/index", self.base_url))
